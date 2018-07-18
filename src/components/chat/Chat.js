@@ -59,7 +59,8 @@ class Chat extends React.Component<Props> {
   }
 
   render() {
-    const { match: { params: { roomName } } = { params: { roomName: '/' } } } = this.props
+    const { match: { params: { roomName } } = { params: { roomName: 'default' } } } = this.props
+    console.log({ roomName })
     return (
       <WebRTCConnection url="https://nashwanchat.herokuapp.com" roomName={roomName}>
         {({ myStream, remotes }) => {

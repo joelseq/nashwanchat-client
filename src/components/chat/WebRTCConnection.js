@@ -118,6 +118,7 @@ class WebRTCConnection extends React.Component<Props, State> {
   }
 
   handleMessage = (message: any) => {
+    console.log(message)
     let peer = this.peers.get(message.from)
     if (!peer) {
       const { myStream: stream } = this.state
